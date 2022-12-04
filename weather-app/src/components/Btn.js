@@ -1,10 +1,10 @@
 import React from "react";
 
 const Button = (props) => {
-  const { btndata, customStyle } = props;
+  const { data, handleClick, customStyle} = props;
   return (
-    <button className="btn-container" style={customStyle}>
-      {btndata}
+    <button className="btn-container" style= {customStyle} onClick={handleClick}>
+      {data}
     </button>
   );
 };

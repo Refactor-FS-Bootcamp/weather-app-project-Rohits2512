@@ -1,8 +1,11 @@
 import React from "react"; 
+import Content from "../components/Content";
 
 const Cities = () => {
     return(
-        <div>This is Cities</div>
+        <div>
+            <Content/>
+        </div>
     )
 }
 export default Cities;

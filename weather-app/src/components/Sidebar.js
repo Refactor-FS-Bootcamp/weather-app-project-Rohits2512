@@ -1,16 +1,20 @@
 import React, { useState } from "react";
-import Button from "./Btn";
+import { useNavigate } from "react-router-dom";
 
 export default function Sidebar(props) {
   const [active, setActive] = useState("Home");
-
-  const { sidebarTabs } = props;
+  // const sample ="This is city description";
+  // const para = "You have not selected any city as a favorite yet.";
+  const navigate = useNavigate();
+  const { sbTabs } = props;
 
   const handleClick = (tab) => {
     setActive(tab);
     if (tab === "Home") {
+      navigate("/");
       console.log("home");
     } else if (tab === "Cities") {
+      navigate("/city");
       console.log("cities");
     }
   };
@@ -23,7 +27,7 @@ export default function Sidebar(props) {
 
   return (
     <div className="main-sb-container">
-      {sidebarTabs.map((tab) => {
+      {sbTabs.map((tab) => {
         return (
           <>
             <div
