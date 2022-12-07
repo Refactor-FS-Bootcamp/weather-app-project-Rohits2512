@@ -1,11 +1,25 @@
 import React from "react"; 
-import Content from "../components/Content";
-
-const Cities = () => {
+import AddIconButton from "../components/Add-Icon-Button";
+import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
+const City = () => {
+    function addCity(){
+        console.log("city added");
+    }
     return(
-        <div>
-            <Content/>
+        <div className="cities-wrapper">
+      <div className="left-container">
+        <div className="city-left-header">
+          <div>Cities</div>
+          <div className="add-btn"><AddIconButton handleClick={addCity} data={<AddCircleOutlineIcon/>}/></div>
+          
         </div>
+        <div className="">
+            <div className="none-selected-city-text">You haven't selected any city.</div>
+        </div>
+        <hr />
+        
+      </div>
+    </div>
     )
 }
-export default Cities;
+export default City;

@@ -1,10 +1,15 @@
 import React from "react";
 import Button from "./Btn";
+import Model from "./Model";
+import { useState } from "react";
 
 const Header = (props) => {
   
+  const [displayModel, setDisplayModel] = useState(false);
   const {heading} =props;
+
   const addNewCity = () =>{
+    setDisplayModel(true);
     console.log("Add City");
   }
 
@@ -28,6 +33,7 @@ const Header = (props) => {
       <div className="text-content">
       <p>You have not selected any city as a favorite yet.</p>
       </div>
+      {displayModel ? <Model/> : <></>}
       </div>
   )
 };
