@@ -1,7 +1,7 @@
 import "../App.css";
 import { Route, Routes } from "react-router-dom";
-import Cities from "../Pages/cities";
 import Home from "../Pages/Home";
+import City from "../Pages/cities";
 import CustomLayout from "../components/custom-layout";
 
 export default function AppRouter() {
@@ -20,7 +20,7 @@ export default function AppRouter() {
           path="/City"
           element={
             <CustomLayout>
-              <Cities />
+              <City />
             </CustomLayout>
           }
         />

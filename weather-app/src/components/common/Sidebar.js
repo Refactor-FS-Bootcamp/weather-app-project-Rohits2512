@@ -1,19 +1,22 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+// import { MyContext } from "./Context";
+// import { useContext } from "react";
 
 export default function Sidebar(props) {
-  const [active, setActive] = useState("Home");
+  const [selectedTab, setSelectedTab] = useState("Home");
+  // const context = useContext(MyContext);
   // const sample ="This is city description";
   // const para = "You have not selected any city as a favorite yet.";
   const navigate = useNavigate();
   const { sbTabs } = props;
 
   const handleClick = (tab) => {
-    setActive(tab);
+    setSelectedTab(tab);
     if (tab === "Home") {
       navigate("/");
       console.log("home");
-    } else if (tab === "Cities") {
+    } else if (tab === "City") {
       navigate("/city");
       console.log("cities");
     }
@@ -32,7 +35,7 @@ export default function Sidebar(props) {
           <>
             <div
               className={
-                active === tab.tab ? "side-bar-active" : "side-bar-inactive"
+                selectedTab === tab.tab ? "side-bar-active" : "side-bar-inactive"
               }
               style={customStyle}
               onClick={() => handleClick(tab.tab)}
